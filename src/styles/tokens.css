@@ -1,0 +1,72 @@
+/* ============================================================
+   DIGL — design tokens
+   A sun-scorched palette: sand + espresso ink, with a single
+   glowing amber accent ("noor"). Per-drop colours used sparingly.
+   ============================================================ */
+:root {
+  /* surfaces */
+  --sand: #ece3d2;
+  --bone: #f5f0e3;
+  --dune: #ddcfb3;
+  --ink: #160f08;
+  --ink-2: #2a2016;
+  --ink-soft: #4a3d2e;
+
+  /* the light */
+  --noor: #e8a33d;
+  --noor-hot: #ffcf6b;
+  --noor-deep: #b9701f;
+
+  /* per-drop accents */
+  --dust: #c9a06b;
+  --oasis: #2f5d4a;
+  --medina: #3f6fa3;
+  --clay: #b5462e;
+
+  /* semantic */
+  --bg: var(--sand);
+  --fg: var(--ink);
+  --rule: rgba(22, 15, 8, 0.16);
+  --rule-strong: rgba(22, 15, 8, 0.4);
+
+  /* type */
+  --font-display: "Anton", "Reem Kufi", system-ui, sans-serif;
+  --font-display-ar: "Reem Kufi", "Anton", system-ui, sans-serif;
+  --font-body: "Space Grotesk", system-ui, sans-serif;
+  --font-body-ar: "Tajawal", "Space Grotesk", system-ui, sans-serif;
+  --font-script-ar: "Aref Ruqaa", "Reem Kufi", serif;
+  --font-mono: ui-monospace, "SFMono-Regular", "Space Grotesk", monospace;
+
+  /* fluid type scale (min 320 → max 1440) */
+  --step--1: clamp(0.78rem, 0.74rem + 0.2vw, 0.9rem);
+  --step-0: clamp(0.95rem, 0.9rem + 0.25vw, 1.08rem);
+  --step-1: clamp(1.2rem, 1.05rem + 0.7vw, 1.6rem);
+  --step-2: clamp(1.6rem, 1.3rem + 1.5vw, 2.6rem);
+  --step-3: clamp(2.4rem, 1.8rem + 3vw, 4.4rem);
+  --step-4: clamp(3.4rem, 2.2rem + 6vw, 7.5rem);
+  --step-5: clamp(4.5rem, 2.4rem + 11vw, 13rem);
+
+  /* spacing / layout */
+  --gutter: clamp(1.1rem, 0.6rem + 2.4vw, 3rem);
+  --section-y: clamp(5rem, 3rem + 9vw, 11rem);
+  --maxw: 1440px;
+  --radius: 2px;
+
+  /* motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0.05, 0.36, 1);
+  --dur: 0.7s;
+
+  --z-grain: 60;
+  --z-cursor: 70;
+  --z-nav: 80;
+  --z-overlay: 90;
+}
+
+/* A "night" context flips surfaces so light reads as light coming from dark. */
+.is-night {
+  --bg: var(--ink);
+  --fg: var(--bone);
+  --rule: rgba(245, 240, 227, 0.14);
+  --rule-strong: rgba(245, 240, 227, 0.35);
+}

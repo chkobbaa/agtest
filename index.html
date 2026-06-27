@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="is-loading">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#160f08" />
+    <title>DIGL — Wear the Light · دڨلة نور</title>
+    <meta
+      name="description"
+      content="DIGL is Tunisian streetwear born in the oasis. The date of light, cut into cloth — sweetness forged in the harshest sun. From Tozeur to Tunis."
+    />
+    <meta property="og:title" content="DIGL — Wear the Light" />
+    <meta property="og:description" content="Tunisian streetwear born in the oasis. Sweetness forged in the harshest sun." />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cellipse cx='16' cy='17' rx='8' ry='12' fill='%23e8a33d'/%3E%3C/svg%3E" />
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+    <!-- film grain overlay (canvas) -->
+    <canvas class="grain" data-grain aria-hidden="true"></canvas>
+
+    <!-- the lantern cursor: you carry the light -->
+    <div class="cursor" data-cursor aria-hidden="true">
+      <div class="cursor__glow"></div>
+      <div class="cursor__dot"></div>
+    </div>
+
+    <!-- preloader -->
+    <div class="loader" data-loader>
+      <div class="loader__inner">
+        <div class="loader__seal" data-art="seal"></div>
+        <p class="loader__from mono" data-i18n="loader.from"></p>
+        <p class="loader__count" data-loader-count>00</p>
+        <p class="loader__to mono" data-i18n="loader.to"></p>
+      </div>
+      <div class="loader__bar"><span data-loader-bar></span></div>
+    </div>
+
+    <!-- vertical "road" scroll progress -->
+    <div class="road" data-road aria-hidden="true">
+      <div class="road__track"></div>
+      <div class="road__lantern" data-road-lantern></div>
+    </div>
+
+    <!-- ====================== NAV ====================== -->
+    <header class="nav" data-nav>
+      <a class="nav__logo" href="#top" aria-label="DIGL — home">
+        <span class="nav__seal" data-art="seal"></span>
+        <span class="nav__word display">DIGL</span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#name" data-i18n="nav.name"></a>
+        <a href="#walker" data-i18n="nav.walker"></a>
+        <a href="#drops" data-i18n="nav.drops"></a>
+        <a href="#shop" data-i18n="nav.shop"></a>
+        <a href="#journal" data-i18n="nav.journal"></a>
+      </nav>
+      <div class="nav__actions">
+        <button class="nav__lang mono" data-lang-toggle data-i18n="lang.toggle"></button>
+        <button class="nav__bag" data-bag-open aria-label="Open bag">
+          <span class="nav__bag-label mono" data-i18n="shop.bag"></span>
+          <span class="nav__bag-count" data-bag-count>0</span>
+        </button>
+        <button class="nav__burger" data-burger aria-label="Menu"><span></span><span></span></button>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- ====================== HERO ====================== -->
+      <section id="hero" class="hero" data-section="00">
+        <div class="hero__sun" data-art="sun" data-parallax="0.25"></div>
+        <canvas class="hero__heat" data-heat aria-hidden="true"></canvas>
+        <div class="hero__stage">
+          <div class="hero__walker" data-art="walker" data-parallax="-0.12"></div>
+          <h1 class="hero__title display">
+            <span class="hero__lead">
+              <span class="hero__w hero__w1" data-i18n="hero.line1">WEAR</span>
+              <span class="hero__w hero__w2" data-i18n="hero.line2">THE</span>
+            </span>
+            <span class="hero__w hero__w3" data-i18n="hero.line3">LIGHT</span>
+          </h1>
+        </div>
+        <div class="hero__foot">
+          <p class="hero__kicker mono" data-i18n="hero.kicker"></p>
+          <div class="hero__right">
+            <p class="hero__sub" data-i18n="hero.sub"></p>
+            <a class="btn btn--solid" href="#name"><span data-i18n="hero.cta"></span></a>
+          </div>
+        </div>
+        <a class="hero__scroll mono" href="#name">
+          <span data-i18n="hero.scroll"></span>
+          <span class="hero__scroll-line"></span>
+        </a>
+      </section>
+
+      <!-- marquee -->
+      <div class="marquee" data-marquee data-speed="1"></div>
+
+      <!-- ====================== THE NAME ====================== -->
+      <section id="name" class="name" data-section="01">
+        <div class="container name__grid">
+          <p class="eyebrow mono" data-i18n="name.eyebrow"></p>
+          <h2 class="name__headline display" data-reveal="lines" data-i18n="name.headline"></h2>
+          <div class="name__lockup" aria-hidden="true">
+            <span class="name__ar script-ar">دڨلة نور</span>
+            <span class="name__arrow"></span>
+            <span class="name__latin display">DIGL</span>
+          </div>
+          <div class="name__body">
+            <p data-reveal data-i18n="name.p1"></p>
+            <p data-reveal data-i18n="name.p2"></p>
+            <p data-reveal class="name__punch" data-i18n="name.p3"></p>
+          </div>
+          <ul class="name__stats">
+            <li data-reveal><span class="stat-num" data-count="50" data-suffix="°C"></span><span class="mono" data-i18n="name.stat1"></span></li>
+            <li data-reveal><span class="stat-num" data-count="200"></span><span class="mono" data-i18n="name.stat2"></span></li>
+            <li data-reveal><span class="stat-num" data-count="1"></span><span class="mono" data-i18n="name.stat3"></span></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ====================== THE WALKER ====================== -->
+      <section id="walker" class="walker-sec is-night" data-section="02" data-theme="night">
+        <div class="walker-sec__sky" data-stars></div>
+        <div class="walker-sec__figure" data-art="walker" data-walker-track></div>
+        <div class="container walker-sec__copy">
+          <p class="eyebrow mono" data-i18n="walker.eyebrow"></p>
+          <h2 class="walker-sec__name display">
+            <span data-i18n="walker.name"></span>
+            <span class="walker-sec__ar script-ar" data-i18n="walker.arabic"></span>
+          </h2>
+          <p class="walker-sec__intro" data-reveal data-i18n="walker.intro"></p>
+          <div class="walker-sec__story">
+            <p data-reveal data-i18n="walker.p1"></p>
+            <p data-reveal data-i18n="walker.p2"></p>
+            <p data-reveal data-i18n="walker.p3"></p>
+          </div>
+          <p class="walker-sec__caption mono" data-i18n="walker.caption"></p>
+        </div>
+      </section>
+
+      <!-- ====================== MANIFESTO ====================== -->
+      <section id="manifesto" class="manifesto" data-section="03">
+        <p class="eyebrow mono container" data-i18n="manifesto.eyebrow"></p>
+        <div class="manifesto__lines container">
+          <p class="manifesto__line display" data-reveal="line" data-i18n="manifesto.l1"></p>
+          <p class="manifesto__line display" data-reveal="line" data-i18n="manifesto.l2"></p>
+          <p class="manifesto__line display dim" data-reveal="line" data-i18n="manifesto.l3"></p>
+          <p class="manifesto__line display dim" data-reveal="line" data-i18n="manifesto.l4"></p>
+          <p class="manifesto__line display noor-line" data-reveal="line" data-i18n="manifesto.l5"></p>
+        </div>
+      </section>
+
+      <!-- ====================== DROPS ====================== -->
+      <section id="drops" class="drops" data-section="04">
+        <div class="container drops__head">
+          <p class="eyebrow mono" data-i18n="drops.eyebrow"></p>
+          <h2 class="drops__headline display" data-reveal="lines" data-i18n="drops.headline"></h2>
+          <p class="drops__hint mono" data-i18n="drops.hint"></p>
+        </div>
+        <div class="drops__rail" data-drops></div>
+      </section>
+
+      <!-- ====================== SHOP ====================== -->
+      <section id="shop" class="shop" data-section="05">
+        <div class="container shop__head">
+          <p class="eyebrow mono" data-i18n="shop.eyebrow"></p>
+          <h2 class="shop__headline display" data-reveal="lines" data-i18n="shop.headline"></h2>
+          <div class="shop__filters" data-shop-filters></div>
+        </div>
+        <div class="container shop__grid" data-shop-grid></div>
+      </section>
+
+      <!-- ====================== JOURNEY ====================== -->
+      <section id="journey" class="journey is-night" data-section="06" data-theme="night">
+        <div class="container journey__head">
+          <p class="eyebrow mono" data-i18n="journey.eyebrow"></p>
+          <h2 class="journey__headline display" data-reveal="lines" data-i18n="journey.headline"></h2>
+          <p class="journey__body" data-reveal data-i18n="journey.body"></p>
+        </div>
+        <div class="journey__map" data-journey></div>
+      </section>
+
+      <!-- ====================== JOURNAL ====================== -->
+      <section id="journal" class="journal" data-section="07">
+        <div class="container journal__head">
+          <p class="eyebrow mono" data-i18n="journal.eyebrow"></p>
+          <h2 class="journal__headline display" data-reveal="lines" data-i18n="journal.headline"></h2>
+        </div>
+        <div class="container journal__list" data-journal></div>
+      </section>
+
+      <!-- ====================== JOIN ====================== -->
+      <section id="join" class="join is-night" data-section="08" data-theme="night">
+        <div class="container join__inner">
+          <p class="eyebrow mono" data-i18n="join.eyebrow"></p>
+          <h2 class="join__headline display" data-reveal="lines" data-i18n="join.headline"></h2>
+          <p class="join__body" data-reveal data-i18n="join.body"></p>
+          <form class="join__form" data-newsletter novalidate>
+            <input type="email" class="join__input" data-newsletter-input required autocomplete="email" />
+            <button type="submit" class="btn btn--solid join__submit"><span data-i18n="join.button"></span></button>
+          </form>
+          <p class="join__msg mono" data-newsletter-msg aria-live="polite"></p>
+        </div>
+      </section>
+    </main>
+
+    <!-- ====================== FOOTER ====================== -->
+    <footer class="footer is-night">
+      <div class="container footer__grid">
+        <div class="footer__brand">
+          <span class="footer__seal" data-art="seal"></span>
+          <p class="footer__word display">DIGL</p>
+          <p class="footer__tag script-ar" data-i18n="footer.tag"></p>
+        </div>
+        <nav class="footer__links" aria-label="Footer">
+          <a href="#" data-i18n="footer.ig"></a>
+          <a href="#" data-i18n="footer.tt"></a>
+          <a href="#" data-i18n="footer.stores"></a>
+          <a href="mailto:salam@digl.tn" data-i18n="footer.contact"></a>
+        </nav>
+        <p class="footer__made" data-i18n="footer.made"></p>
+      </div>
+      <div class="container footer__bottom mono">
+        <span>© <span data-year></span> DIGL</span>
+        <span data-i18n="footer.rights"></span>
+        <a href="#top" data-i18n="footer.back"></a>
+      </div>
+      <div class="footer__giant display" aria-hidden="true">DIGL</div>
+    </footer>
+
+    <!-- ====================== BAG DRAWER ====================== -->
+    <div class="bag" data-bag hidden>
+      <div class="bag__scrim" data-bag-close></div>
+      <aside class="bag__panel" role="dialog" aria-label="Shopping bag" aria-modal="true">
+        <header class="bag__head">
+          <span class="display" data-i18n="shop.bag"></span>
+          <button class="bag__close mono" data-bag-close data-i18n="shop.close"></button>
+        </header>
+        <div class="bag__items" data-bag-items></div>
+        <footer class="bag__foot">
+          <div class="bag__total">
+            <span class="mono" data-i18n="shop.total"></span>
+            <span data-bag-total>0 TND</span>
+          </div>
+          <button class="btn btn--solid bag__checkout"><span data-i18n="shop.checkout"></span></button>
+        </footer>
+      </aside>
+    </div>
+  </body>
+</html>

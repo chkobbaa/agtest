@@ -1,0 +1,63 @@
+/* ============================================================
+   Keyframes
+   ============================================================ */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes drip {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  40% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  60% {
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+}
+
+/* the lantern flame breathes */
+@keyframes flicker {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  45% {
+    opacity: 0.86;
+    transform: scale(0.96);
+  }
+  70% {
+    opacity: 0.95;
+    transform: scale(1.03);
+  }
+}
+.walker .wk-flame,
+.walker .wk-floorglow {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: flicker 3.6s var(--ease-in-out) infinite;
+}
+.walker .wk-spark {
+  animation: flicker 3.6s var(--ease-in-out) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .walker .wk-flame,
+  .walker .wk-floorglow,
+  .walker .wk-spark,
+  .loader__seal,
+  .hero__scroll-line {
+    animation: none !important;
+  }
+}

@@ -1,0 +1,111 @@
+/* ============================================================
+   Components & primitives
+   ============================================================ */
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--ink-soft);
+  margin-bottom: clamp(1rem, 2vw, 1.6rem);
+}
+.is-night .eyebrow {
+  color: rgba(245, 240, 227, 0.6);
+}
+.eyebrow::before {
+  content: "";
+  width: clamp(28px, 5vw, 64px);
+  height: 1px;
+  background: currentColor;
+}
+
+.noor {
+  color: var(--noor);
+}
+
+/* ---- buttons ---- */
+.btn {
+  --bd: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85em 1.6em;
+  border: 1px solid var(--bd);
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: var(--step--1);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition: color 0.4s var(--ease-out), border-color 0.4s;
+}
+html[dir="rtl"] .btn {
+  font-family: var(--font-body-ar);
+  letter-spacing: 0.02em;
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--noor);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.45s var(--ease-out);
+}
+.btn:hover {
+  color: var(--ink);
+  border-color: var(--noor);
+}
+.btn:hover::before {
+  transform: scaleY(1);
+}
+.btn--solid {
+  background: var(--ink);
+  color: var(--bone);
+  --bd: var(--ink);
+}
+.is-night .btn {
+  --bd: var(--bone);
+  color: var(--bone);
+}
+.is-night .btn--solid {
+  background: var(--noor);
+  color: var(--ink);
+  --bd: var(--noor);
+}
+.is-night .btn--solid::before {
+  background: var(--bone);
+}
+
+/* ---- reveal base states (driven by GSAP / IntersectionObserver) ---- */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  filter: blur(6px);
+  transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out), filter 0.9s var(--ease-out);
+}
+[data-reveal].is-in {
+  opacity: 1;
+  transform: none;
+  filter: blur(0);
+}
+
+/* numeric counters */
+.stat-num {
+  font-family: var(--font-display);
+  font-size: var(--step-3);
+  line-height: 1;
+  color: var(--noor);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+}
