@@ -3,9 +3,9 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "DIGL — Tunisian streetwear. Sweetness forged in the harshest sun.",
+  "description": "DIGL — Tunisian streetwear for the long walk.",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview --port 4173",
     "typecheck": "tsc --noEmit"

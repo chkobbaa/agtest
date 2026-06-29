@@ -1,21 +1,21 @@
-# DIGL — دڨلة نور
+# DIGL — السّايْر
 
 **Wear the light.** A from-scratch brand site for DIGL, a Tunisian streetwear
-label. The whole identity — a character, an origin myth, and an immersive,
+label. The whole identity — a character, a road myth, and an immersive,
 scroll‑driven world — is built in code. No stock photography: every visual
 (the mascot, the logo seal, the garments, the night sky, the heat haze) is
 hand‑drawn SVG or generated on a `<canvas>`.
 
 ## The idea
 
-DIGL comes from **دڨلة** (*degla*), the date of the Tunisian south — the root of
-*Deglet Nour*, “the date of light”: the sweetest fruit on earth, grown in the
-harshest place on earth. That contradiction is the brand: **sweetness forged in
-the harshest sun.**
+DIGL is a Tunisian streetwear mark built around movement: heavy cotton, sharp
+graphics, road-worn layers, and the pressure of late streets. The world keeps
+the heat, dust, light, and southern-to-city route, but the brand is about
+garments and the people who keep walking.
 
 Every drop begins with **السّايْر — The Walker**, a hooded wanderer who carries a
-lantern whose flame is a single glowing date, walking *noor* (light) from the
-oasis of Tozeur to the medina of Tunis.
+lantern whose ember cuts through the dark, walking *noor* (light) from the
+southern edge to the medina of Tunis.
 
 ## Highlights
 
@@ -24,10 +24,11 @@ oasis of Tozeur to the medina of Tunis.
   night sections (the core brand idea made interactive).
 - **Scroll‑driven storytelling** with GSAP + Lenis: the Walker physically walks
   across the page, the sun parallaxes, headlines clear from a heat‑blur.
-- **A working shop** — filterable grid, per‑card size selection, an add‑to‑bag
-  flow and a slide‑in bag drawer that persists in `localStorage`.
+- **A working catalog** — search, sorting, drop filters, per‑card size
+  selection, hash-linked product detail pages, add‑to‑bag, and a slide‑in bag
+  drawer that persists in `localStorage`.
 - **An interactive map** — drag the lantern along the road from Tozeur to Tunis.
-- A film‑grain overlay and a desert heat‑haze, both generated on canvas.
+- A film‑grain overlay and a street heat‑haze, both generated on canvas.
 
 ## Stack
 

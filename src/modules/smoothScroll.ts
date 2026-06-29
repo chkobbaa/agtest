@@ -28,9 +28,15 @@ export function initSmoothScroll(): void {
 
   // Intercept same-page anchor clicks for buttery scrolling.
   document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]').forEach((a) => {
+    // Nav-owned links (section links + the logo/#top) are handled by nav.ts,
+    // which is route-aware (it routes home before scrolling). Don't double-bind.
+    if (a.matches("[data-nav-section]") || a.getAttribute("href") === "#top") return;
     a.addEventListener("click", (e) => {
       const id = a.getAttribute("href")!;
       if (id.length < 2) return;
+      // Route links (e.g. "#/shop", "#product/x") are not scroll anchors — let
+      // the hash router handle them. They aren't valid CSS selectors either.
+      if (id.startsWith("#/") || id.includes("/")) return;
       const target = document.querySelector(id);
       if (!target) return;
       e.preventDefault();

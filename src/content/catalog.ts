@@ -1,72 +1,40 @@
-import type { Drop, Product, JourneyStop, JournalEntry } from "./types";
+import type { Drop, Product, JourneyStop, JournalEntry, TeamMember } from "./types";
 
 // ---------------------------------------------------------------------------
-// DROPS — four capsules, one road from the oasis to the city.
+// DROPS — four capsules, one road from the south to the city.
 // ---------------------------------------------------------------------------
 export const DROPS: Drop[] = [
   {
-    code: "GHBAR",
-    arabic: "غبار",
-    meaning: { en: "Dust", ar: "غبار" },
+    code: "SUMMER",
+    arabic: "صيف",
+    meaning: { en: "Summer Drop", ar: "دروب الصيف" },
     line: {
-      en: "The color of the road before rain.",
-      ar: "لون الطريق قبل ما تنزل الشتا.",
+      en: "Lightwear for the heat.",
+      ar: "لبسة خفيفة للسخانة.",
     },
     body: {
-      en: "The origin capsule. Sand-washed heavyweight cotton, pigment-dyed so every piece fades like a desert afternoon. The base layer of the whole world.",
-      ar: "الكبسولة الأم. قطن ثقيل مغسول بالرمل، مصبوغ بالبيڨمون باش كل قطعة تبهت كيف عشيّة في الصحرا. هي الأساس متاع العالَم الكل.",
+      en: "The summer capsule. Breathable cottons, clean cuts, and pieces built to survive the heat of the city and the long walk.",
+      ar: "كبسولة الصيف. قطن يتنفس، قصّات نظيفة، وقطع متصنوعة باش تعيش في سخانة المدينة.",
     },
-    status: { en: "Open stock", ar: "متوفّر" },
-    color: "#c9a06b",
-    ink: "#241a10",
-  },
-  {
-    code: "NOOR",
-    arabic: "نور",
-    meaning: { en: "Light", ar: "نور" },
-    line: {
-      en: "Catches headlights like a date catches the last sun.",
-      ar: "تقبض ضو الكيّان كيف ما تقبض الدڨلة آخر شمس.",
-    },
-    body: {
-      en: "After dark. Reflective hits and glow-line piping that ignite under any light. Built for the walk home when the alleys go black.",
-      ar: "بعد ما يضلم. تفاصيل عاكسة وخيوط تشعّل تحت أي ضو. متصنوعة لمشية الرجوع للدار وقت تولّي الزنانق كحلة.",
-    },
-    status: { en: "Drops at maghreb", ar: "يطلع في المغرب" },
+    status: { en: "Now Available", ar: "متوفر الان" },
     color: "#e8a33d",
     ink: "#1a1206",
   },
   {
-    code: "DERB",
-    arabic: "درب",
-    meaning: { en: "The Alley", ar: "الدرب" },
+    code: "WINTER",
+    arabic: "شتاء",
+    meaning: { en: "Winter Drop", ar: "دروب الشتاء" },
     line: {
-      en: "Cut for walls a meter apart.",
-      ar: "مقصوص لحيوط بينهم متر.",
+      en: "Heavyweight warmth for the cold route.",
+      ar: "دفء ثقيل للطريق الباردة.",
     },
     body: {
-      en: "City fits in medina blue and concrete grey. Boxy, layered, made to move sideways through the old town without catching a corner.",
-      ar: "لبسة مدينة بأزرق المدينة ورمادي الإسمنت. واسعة، طبقات، متصنوعة باش تتحرّك بيها في المدينة العتيقة بلا ما تتعلّق في ركن.",
+      en: "The winter capsule. Dense fleece, protective hoods, and layered weights. Built for the walk home when the temperature drops.",
+      ar: "كبسولة الشتاء. فليس خشين، كبابط تحمي، وطبقات ثقيلة. متصنوعة لرجعة الدار وقت يطيح الليل.",
     },
-    status: { en: "Open stock", ar: "متوفّر" },
+    status: { en: "Drops soon", ar: "قريبا" },
     color: "#3f6fa3",
     ink: "#f1f4f8",
-  },
-  {
-    code: "OASIS",
-    arabic: "واحة",
-    meaning: { en: "Oasis", ar: "واحة" },
-    line: {
-      en: "Released only when the harvest comes in.",
-      ar: "ما يطلعش كان وقت تجي الغلّة.",
-    },
-    body: {
-      en: "The rare one. Palm-green jacquard threaded with real gold yarn, numbered to ninety-nine. Made once a year, when the dates ripen.",
-      ar: "النادرة. جاكار أخضر نخلة مخيّط بخيط ذهب حقيقي، منمّر لتسعة وتسعين. يتصنع مرّة في العام، وقت تنضج الدڨلة.",
-    },
-    status: { en: "99 pieces / year", ar: "٩٩ قطعة / عام" },
-    color: "#2f5d4a",
-    ink: "#eef3ec",
   },
 ];
 
@@ -75,167 +43,337 @@ export const DROPS: Drop[] = [
 // ---------------------------------------------------------------------------
 export const PRODUCTS: Product[] = [
   {
-    id: "ghbar-hoodie",
-    drop: "GHBAR",
-    name: { en: "Ghbar Heavyweight Hoodie", ar: "كبّوط غبار ثقيل" },
+    id: "summer-white-shirt",
+    drop: "SUMMER",
+    name: { en: "DIGL White Shirt", ar: "قميص دِيڨل أبيض" },
+    category: { en: "Tee", ar: "تيشيرت" },
+    colorway: { en: "Pure White", ar: "أبيض ناصع" },
     spec: {
-      en: "420 GSM brushed-back loopwheel cotton · sand pigment wash · boxy drop-shoulder",
-      ar: "قطن ٤٢٠ ڨرام مفروش · غسيل رمل بالبيڨمون · قَصّة واسعة بكتف نازل",
+      en: "Premium cotton · breathable · relaxed fit",
+      ar: "قطن ممتاز · يتنفس · قصة مريحة",
     },
-    priceTND: 219,
-    sizes: ["S", "M", "L", "XL", "XXL"],
+    fit: { en: "Relaxed body, dropped shoulder.", ar: "أوفرسايز، كتف نازل." },
+    material: { en: "Premium cotton with a soft hand feel.", ar: "قطن ممتاز بملمس ناعم." },
+    care: { en: "Cold wash.", ar: "إغسل بارد." },
+    story: {
+      en: "A core staple for the heat. Built to breathe while maintaining structure.",
+      ar: "أساسي للسخانة. يتنفس ويحافظ على الفورمة.",
+    },
+    details: [
+      { en: "Signature DIGL cut", ar: "تفصيلة دِيڨل" },
+      { en: "Breathable fabric", ar: "قماش يتنفس" },
+      { en: "Pre-shrunk body", ar: "متقلّص قبل الخياطة" },
+    ],
+    images: [
+      "/src/media/shirt.webp",
+      "/src/media/shirt2.webp",
+      "/src/media/shirt3.webp"
+    ],
+    lifestyleImage: "/src/media/life_white_shirt.webp",
+    status: { en: "Available", ar: "متوفّر" },
+    priceTND: 85,
+    sizes: ["S", "M", "L", "XL"],
+    silhouette: "tee",
+    
+  },
+  {
+    id: "summer-black-tank",
+    drop: "SUMMER",
+    name: { en: "DIGL Black Tank", ar: "خلعة دِيڨل كحلة" },
+    category: { en: "Tank", ar: "خلعة" },
+    colorway: { en: "Night Black", ar: "كحل ليل" },
+    spec: {
+      en: "Ribbed cotton · athletic fit · reinforced hems",
+      ar: "قطن مضلع · قصة رياضية · مدعم",
+    },
+    fit: { en: "Fitted athletic cut.", ar: "قصة رياضية مضبوطة." },
+    material: { en: "Ribbed stretch cotton.", ar: "قطن مضلع مطاطي." },
+    care: { en: "Wash cold with dark colors.", ar: "إغسل بارد مع الألوان الغامقة." },
+    story: {
+      en: "For the hottest days. Clean, sharp, and cut to move.",
+      ar: "لأكثر الأيام سخانة. نظيف، حاد، ومقصود للحركة.",
+    },
+    details: [
+      { en: "Ribbed texture", ar: "قماش مضلع" },
+      { en: "Reinforced straps", ar: "سمطة مدعمة" },
+    ],
+    images: [
+      "/src/media/tank_top.webp",
+      "/src/media/tank_top2.webp"
+    ],
+    lifestyleImage: "/src/media/life_black_tank.webp",
+    status: { en: "Available", ar: "متوفّر" },
+    priceTND: 55,
+    sizes: ["S", "M", "L"],
+    silhouette: "tank",
+    
+  },
+  {
+    id: "summer-tote-bag",
+    drop: "SUMMER",
+    name: { en: "DIGL Contrast Tote", ar: "حقيبة دِيڨل" },
+    category: { en: "Accessories", ar: "إكسسوارات" },
+    colorway: { en: "Black / White", ar: "أبيض / أكحل" },
+    spec: {
+      en: "Heavy canvas · contrast design · durable straps",
+      ar: "كانفا ثقيل · تصميم متناقض · سمطة قوية",
+    },
+    fit: { en: "One size fits everything you need.", ar: "حجم واحد يهز كل شي." },
+    material: { en: "Heavy duty cotton canvas.", ar: "كانفا قطن قوي." },
+    care: { en: "Spot clean only.", ar: "تنظيف بالبقعة فقط." },
+    story: {
+      en: "Carry the load. Strong enough for tools, clean enough for the city.",
+      ar: "هز حملك. قوية للأدوات، ونظيفة للمدينة.",
+    },
+    details: [
+      { en: "Heavyweight canvas", ar: "كانفا خشين" },
+      { en: "Reinforced handles", ar: "يدين مدعمة" },
+    ],
+    images: [
+      "/src/media/bag.webp",
+      "/src/media/bag2.webp"
+    ],
+    lifestyleImage: "/src/media/life_bag.webp",
+    status: { en: "Available", ar: "متوفّر" },
+    priceTND: 45,
+    sizes: ["OS"],
+    silhouette: "bag",
+  },
+  {
+    id: "summer-pink-cap",
+    drop: "SUMMER",
+    name: { en: "DIGL Pink Cap", ar: "كاسكيط دِيڨل غوز" },
+    category: { en: "Accessories", ar: "إكسسوارات" },
+    colorway: { en: "Faded Pink", ar: "غوز باهت" },
+    spec: {
+      en: "Classic dad hat fit · adjustable strap · embroidered logo",
+      ar: "قصة كلاسيكية · سمطة قابلة للضبط · لوڨو مطرز",
+    },
+    fit: { en: "Adjustable back strap.", ar: "سمطة تتعدل من الخلف." },
+    material: { en: "Brushed cotton twill.", ar: "قطن تويل ناعم." },
+    care: { en: "Hand wash or spot clean.", ar: "غسيل باليد أو تنظيف موضعي." },
+    story: {
+      en: "Block the sun. A faded wash for a lived-in feel right out of the box.",
+      ar: "احجب الشمس. غسلة باهتة لإحساس مستعمل من أول نهار.",
+    },
+    details: [
+      { en: "Embroidered DIGL logo", ar: "لوڨو دِيڨل مطرز" },
+      { en: "Metal clasp", ar: "قفل حديد" },
+    ],
+    images: [
+      "/src/media/cap.webp"
+    ],
+    lifestyleImage: "/src/media/life_pink_cap.webp",
+    status: { en: "Available", ar: "متوفّر" },
+    priceTND: 35,
+    sizes: ["OS"],
+    silhouette: "cap",
+  },
+  {
+    id: "winter-pink-hoodie",
+    drop: "WINTER",
+    name: { en: "DIGL Pink Hoodie", ar: "كبّوط دِيڨل غوز" },
+    category: { en: "Outerwear", ar: "كبّوط" },
+    colorway: { en: "Dusk Pink", ar: "غوز الغسق" },
+    spec: {
+      en: "Heavyweight fleece · double lined hood · drop shoulder",
+      ar: "فليس خشين · كبّوط دوبل · كتف نازل",
+    },
+    fit: { en: "Boxy, oversized fit.", ar: "قصّة واسعة." },
+    material: { en: "Premium cotton blend fleece.", ar: "فليس قطن ممتاز." },
+    care: { en: "Cold wash inside out. Hang dry.", ar: "غسيل بارد مقلوب. نشّف في الهواء." },
+    story: {
+      en: "A soft color for a heavy garment. Built to hold heat when the sun drops.",
+      ar: "لون ناعم لقطعة ثقيلة. متصنوعة باش تشد السخانة وقت تغيب الشمس.",
+    },
+    details: [
+      { en: "Double layered hood", ar: "كبّوط دوبل" },
+      { en: "Ribbed cuffs", ar: "أطراف مضلعة" },
+    ],
+    images: [
+      "/src/media/hoodie.webp",
+      "/src/media/hoodie2.webp",
+      "/src/media/hoodie3.webp",
+      "/src/media/hoodie4.webp"
+    ],
+    lifestyleImage: "/src/media/life_pink_hoodie.webp",
+    status: { en: "Drops soon", ar: "قريبا" },
+    priceTND: 180,
+    sizes: ["S", "M", "L", "XL"],
     silhouette: "hoodie",
   },
   {
-    id: "ghbar-cargo",
-    drop: "GHBAR",
-    name: { en: "Ghbar Eight-Pocket Cargo", ar: "كارڨو غبار بثمن جيوب" },
+    id: "winter-black-hoodie",
+    drop: "WINTER",
+    name: { en: "DIGL Black Hoodie", ar: "كبّوط دِيڨل أكحل" },
+    category: { en: "Outerwear", ar: "كبّوط" },
+    colorway: { en: "Midnight Black", ar: "أكحل ليل" },
     spec: {
-      en: "12 oz cotton ripstop · eight bellow pockets · adjustable hem · the road color",
-      ar: "ريبستوب قطن ١٢ أونصة · ثمن جيوب · أسفل قابل للضبط · لون الطريق",
+      en: "Heavyweight fleece · protective hood · stealth details",
+      ar: "فليس خشين · كبّوط يحمي · تفاصيل مخفية",
     },
-    priceTND: 189,
-    sizes: ["28", "30", "32", "34", "36"],
-    silhouette: "cargo",
-  },
-  {
-    id: "walker-tee",
-    drop: "GHBAR",
-    name: { en: "The Walker Tee", ar: "تيشيرت السّايْر" },
-    spec: {
-      en: "240 GSM combed ringspun · oversized · full back graphic of السّايْر",
-      ar: "قطن مسرّح ٢٤٠ ڨرام · أوفرسايز · ڨرافيك كامل للسّايْر في الضهر",
+    fit: { en: "Boxy, oversized fit.", ar: "قصّة واسعة." },
+    material: { en: "Premium cotton blend fleece.", ar: "فليس قطن ممتاز." },
+    care: { en: "Cold wash inside out. Hang dry.", ar: "غسيل بارد مقلوب. نشّف في الهواء." },
+    story: {
+      en: "The armor. Heavy enough for night air, clean enough for the city.",
+      ar: "الدرع. ثقيلة لليل، ونظيفة للمدينة.",
     },
-    priceTND: 99,
-    sizes: ["S", "M", "L", "XL"],
-    silhouette: "tee",
-  },
-  {
-    id: "noor-reflective-tee",
-    drop: "NOOR",
-    name: { en: "Noor Reflective Tee", ar: "تيشيرت نور عاكس" },
-    spec: {
-      en: "240 GSM · 3M-grade reflective lantern print · glows white under light",
-      ar: "٢٤٠ ڨرام · طباعة عاكسة درجة 3M للفانوس · تشعّل أبيض تحت الضو",
-    },
-    priceTND: 109,
-    sizes: ["S", "M", "L", "XL"],
-    silhouette: "tee",
-  },
-  {
-    id: "noor-windbreaker",
-    drop: "NOOR",
-    name: { en: "Noor Packable Windbreaker", ar: "وندبريكر نور قابل للطيّ" },
-    spec: {
-      en: "Ripstop nylon · glow-line piping · packs into its own chest pocket",
-      ar: "نايلون ريبستوب · خيوط تشعّل · يتطوى في جيب صدره",
-    },
-    priceTND: 249,
-    sizes: ["S", "M", "L", "XL"],
-    silhouette: "windbreaker",
-  },
-  {
-    id: "derb-work-jacket",
-    drop: "DERB",
-    name: { en: "Derb Chore Jacket", ar: "ڤيستة درب" },
-    spec: {
-      en: "Medina-blue 10 oz canvas · boxy chore cut · triple-needle seams · woven Degla tab",
-      ar: "كانفا أزرق المدينة ١٠ أونصة · قصّة شور واسعة · خياطة تلاث إبر · علامة دڨلة منسوجة",
-    },
-    priceTND: 269,
-    sizes: ["S", "M", "L", "XL"],
-    silhouette: "jacket",
-  },
-  {
-    id: "derb-beanie",
-    drop: "DERB",
-    name: { en: "Derb Ribbed Beanie", ar: "بونيّة درب مضلّعة" },
-    spec: {
-      en: "Fine-rib merino blend · fold cuff · woven Degla tab",
-      ar: "ميرينو مضلّع رفيع · حافة مطوية · علامة دڨلة منسوجة",
-    },
-    priceTND: 59,
-    sizes: ["One size"],
-    silhouette: "beanie",
-  },
-  {
-    id: "oasis-knit",
-    drop: "OASIS",
-    name: { en: "Oasis Gold-Thread Knit", ar: "تريكو واحة بخيط الذهب" },
-    spec: {
-      en: "Palm-green jacquard · real gold-wrapped yarn · individually numbered",
-      ar: "جاكار أخضر نخلة · خيط ملفوف بالذهب · منمّر فردياً",
-    },
-    priceTND: 329,
-    sizes: ["S", "M", "L", "XL"],
-    edition: "/ 99",
-    silhouette: "knit",
+    details: [
+      { en: "Kangaroo pocket", ar: "جيب أمامي" },
+      { en: "Matte black drawcords", ar: "كردون أكحل" },
+    ],
+    images: [
+      "/src/media/black_hoodie.webp",
+      "/src/media/black_hoodie2.webp",
+      "/src/media/black_hoodie3.webp"
+    ],
+    lifestyleImage: "/src/media/life_black_hoodie.webp",
+    status: { en: "Drops soon", ar: "قريبا" },
+    priceTND: 180,
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    silhouette: "hoodie",
   },
 ];
 
+
 // ---------------------------------------------------------------------------
-// JOURNEY — the Walker's road, south to north.
+// JOURNEY — the order's road from Nabeul to your door. The map is reused as a
+// shipping tracker: each "stop" is a fulfilment stage. `city` holds the stage
+// name and `hour` its timing; x/y keep the road's shape.
 // ---------------------------------------------------------------------------
 export const JOURNEY: JourneyStop[] = [
   {
-    city: { en: "Tozeur", ar: "توزر" },
+    city: { en: "Order confirmed", ar: "تأكيد الطلب" },
     x: 16,
     y: 86,
-    hour: "18:42",
-    note: { en: "The oasis. The lantern is lit.", ar: "الواحة. الفانوس تشعّل." },
+    hour: "Day 0",
+    note: {
+      en: "We receive your order from Nabeul and confirm sizes and stock. The lantern is lit.",
+      ar: "نستقبلوا طلبك من نابل ونأكّدوا القياسات والمخزون. الفانوس تشعّل.",
+    },
   },
   {
-    city: { en: "Gabès", ar: "قابس" },
+    city: { en: "Packed", ar: "تلفيف" },
     x: 40,
     y: 70,
-    hour: "22:10",
-    note: { en: "The sea on the left, the desert behind.", ar: "البحر على اليسار، الصحرا ورا." },
+    hour: "Day 1",
+    note: {
+      en: "Your pieces are folded, checked, and sealed in DIGL packaging, ready for the road.",
+      ar: "قطعك تتطوى، تتفحّص، وتتغلّف في تغليف دِيڨل، حاضرة للطريق.",
+    },
   },
   {
-    city: { en: "Kairouan", ar: "القيروان" },
+    city: { en: "Dispatched", ar: "خرجت للتوصيل" },
     x: 58,
     y: 47,
-    hour: "03:30",
-    note: { en: "Old walls. He rests against the great mosque.", ar: "حيوط قديمة. يرتاح على الجامع الكبير." },
+    hour: "Day 2",
+    note: {
+      en: "Handed to the courier. Across Tunisia the order moves the way the Walker does — by road.",
+      ar: "تتسلّم للتوصيل. في كامل تونس الكوموند تتحرّك كيف السّايْر — بالطريق.",
+    },
   },
   {
-    city: { en: "Tunis", ar: "تونس" },
+    city: { en: "Delivered", ar: "وصلت" },
     x: 74,
     y: 18,
-    hour: "06:15",
-    note: { en: "The medina wakes. The flame has held.", ar: "المدينة تفيق. النار صمدت." },
+    hour: "Day 2–4",
+    note: {
+      en: "At your door, usually within 2–4 working days. The flame has held the whole way.",
+      ar: "لباب دارك، عادةً في ٢ إلى ٤ أيام خدمة. النار صمدت الطريق الكل.",
+    },
   },
 ];
 
 // ---------------------------------------------------------------------------
-// JOURNAL — short lore dispatches.
+// JOURNAL — store / order notes. Practical information for shoppers, kept in
+// the editorial index voice.
 // ---------------------------------------------------------------------------
 export const JOURNAL: JournalEntry[] = [
   {
     index: "001",
-    title: { en: "Maghreb in Tozeur", ar: "مغرب في توزر" },
-    place: { en: "The oasis · 18:42", ar: "الواحة · ١٨:٤٢" },
+    title: { en: "Shipping & delivery", ar: "الشحن والتوصيل" },
+    place: { en: "All of Tunisia · 2–4 days", ar: "كامل تونس · ٢–٤ أيام" },
     body: {
-      en: "The sun does not set here so much as surrender. The palms go from green to brass to black. He ties the hood, lifts the lantern, and the first date catches fire without burning.",
-      ar: "الشمس ما تغيبش هوني، تستسلم. النخيل يولّي من أخضر لنحاسي لكحل. يشدّ الكبّوط، يرفع الفانوس، وأول دڨلة تشعّل بلا ما تحرق.",
+      en: "We ship from Nabeul to anywhere in Tunisia, usually within 2–4 working days. Delivery is 7 TND, free on orders over 250 TND. You can pay online or on delivery.",
+      ar: "نشحنوا من نابل لأي بلاصة في تونس، عادةً في ٢ إلى ٤ أيام خدمة. التوصيل ٧ دينار، فابور فوق ٢٥٠ دينار. تنجم تخلّص أونلاين ولا عند الاستلام.",
     },
   },
   {
     index: "002",
-    title: { en: "The Salt Road", ar: "طريق الملح" },
-    place: { en: "Chott el Djerid · 23:55", ar: "شط الجريد · ٢٣:٥٥" },
+    title: { en: "Payment options", ar: "طرق الدفع" },
+    place: { en: "Online or WhatsApp", ar: "أونلاين ولا واتساب" },
     body: {
-      en: "He crosses the dry lake where the ground cracks into a thousand white tiles. They say a lantern crossing the chott looks, from far, like a single moving star. Nobody walks it at night. He does.",
-      ar: "يقطع البحيرة الجافة فين الأرض تتشقّق لألف قرميدة بيضة. يقولوا فانوس يقطع الشط، من بعيد، يبان كيف نجمة وحدة تتحرّك. حدّ ما يقطعهاش في الليل. هو يقطعها.",
+      en: "Pay by card through a secure online link, or send your order on WhatsApp and confirm payment there. Every order is checked by a human in Nabeul before it goes out.",
+      ar: "خلّص بالكارت من خلال لينك أونلاين آمن، ولا ابعث طلبك على واتساب وأكّد الخلاص هوني. كل كوموند يتأكّد من واحد في نابل قبل ما تخرج.",
     },
   },
   {
     index: "003",
-    title: { en: "Into the Medina", ar: "للمدينة العتيقة" },
-    place: { en: "Bab Bhar · 06:15", ar: "باب بحر · ٠٦:١٥" },
+    title: { en: "Exchanges & returns", ar: "التبديل والإرجاع" },
+    place: { en: "7-day window · unworn", ar: "٧ أيام · ما تلبستش" },
     body: {
-      en: "The alleys are a meter wide and full of yesterday. He turns his shoulders to pass. By the time the bakers light their ovens, the lantern is just warmth in his pocket — and the light is on everyone he passed.",
-      ar: "الزنانق متر وملاهي بالبارح. يدوّر كتافه باش يفوت. وقت يشعّلوا الخبّازة كوشاتهم، الفانوس يولّي كان دفا في جيبه — والنّور يولّي على كل اللي فات عليهم.",
+      en: "Sizes off? Exchange any unworn piece within 7 days of delivery, tags on. Reach us on WhatsApp or at salam@digl.tn and we'll sort the road back.",
+      ar: "القياس ما جاش؟ بدّل أي قطعة ما تلبستش في ٧ أيام من الاستلام، بالتيكي. تواصل معانا على واتساب ولا salam@digl.tn ونرتّبوا الإرجاع.",
     },
+  },
+];
+
+// ---------------------------------------------------------------------------
+// TEAM — "The Makers". The crew behind DIGL, in the brand's lore voice.
+// Portraits are hand-built woodcut busts (see art/marks.ts portraitSVG).
+// ---------------------------------------------------------------------------
+export const TEAM: TeamMember[] = [
+  {
+    id: "keeper",
+    name: { en: "The Keeper", ar: "الحارس" },
+    role: { en: "Founder · keeper of the route", ar: "المؤسّس · حارس الطريق" },
+    tag: { en: "lights the lantern first", ar: "يشعّل الفانوس قبل الكل" },
+    bio: {
+      en: "Started DIGL from a Nabeul rooftop with one screen and a stubborn idea: clothes for the walk home, not the runway. Sets the direction, then walks it.",
+      ar: "بدا دِيڨل من سطح في نابل بشاشة وحدة وفكرة عنيدة: لباس لمشية الرجوع للدار، موش للرانواي. يحدّد الطريق، وبعد يمشيه.",
+    },
+    portrait: "keeper",
+    color: "#e8a33d",
+    ink: "#1a1206",
+  },
+  {
+    id: "cutter",
+    name: { en: "The Cutter", ar: "القَصّاص" },
+    role: { en: "Patterns · fit · construction", ar: "الباترون · القَصّة · التصنيع" },
+    tag: { en: "a meter apart, every time", ar: "متر بمتر، في كل مرّة" },
+    bio: {
+      en: "Turns a feeling into a pattern. Lives in seam allowances and grams-per-square-meter, and will re-cut a shoulder four times until the drop sits right.",
+      ar: "يحوّل إحساس لباترون. يعيش في حساب الخياطة والڨرامات، ويعاود قصّ الكتف أربع مرّات حتى يجي مظبوط.",
+    },
+    portrait: "cutter",
+    color: "#3f6fa3",
+    ink: "#f1f4f8",
+  },
+  {
+    id: "ink",
+    name: { en: "Ink & Light", ar: "حبر ونور" },
+    role: { en: "Print · graphics · the lantern mark", ar: "الطباعة · الڨرافيك · علامة الفانوس" },
+    tag: { en: "pulls the screen by hand", ar: "يسحب الإيكران باليد" },
+    bio: {
+      en: "Mixes the pigments, burns the screens, and pulls every print so the Walker reads the same on the hundredth tee as the first. Obsessed with reflective ink.",
+      ar: "يخلط الألوان، يحرق الإيكرانات، ويسحب كل طباعة باش السّايْر يبان نفس الشيء في التيشيرت المية كيف الأول. مهووس بالحبر العاكس.",
+    },
+    portrait: "ink",
+    color: "#2f5d4a",
+    ink: "#eef3ec",
+  },
+  {
+    id: "scribe",
+    name: { en: "The Scribe", ar: "الكاتب" },
+    role: { en: "Stories · journal · the lore", ar: "الحكايات · اليوميّات · الأسطورة" },
+    tag: { en: "writes the road down", ar: "يكتب الطريق" },
+    bio: {
+      en: "Keeps the myth honest. Writes the drops, the journal, and the Walker's nights so every piece arrives with a story you can actually feel.",
+      ar: "يحافظ على صدق الأسطورة. يكتب الدروبات، اليوميّات، وليالي السّايْر باش كل قطعة توصل ومعاها حكاية تتحسّ.",
+    },
+    portrait: "scribe",
+    color: "#c9a06b",
+    ink: "#241a10",
   },
 ];

@@ -19,7 +19,7 @@
 
   /* per-drop accents */
   --dust: #c9a06b;
-  --oasis: #2f5d4a;
+  --raha: #2f5d4a;
   --medina: #3f6fa3;
   --clay: #b5462e;
 
@@ -58,9 +58,13 @@
   --dur: 0.7s;
 
   --z-grain: 60;
-  --z-cursor: 70;
   --z-nav: 80;
   --z-overlay: 90;
+  /* the flying garment during a catalog→detail morph rides above the overlay */
+  --z-flight: 150;
+  /* The carried light always rides above every panel/overlay. It has
+     pointer-events:none, so a high z-index never blocks clicks beneath it. */
+  --z-cursor: 200;
 }
 
 /* A "night" context flips surfaces so light reads as light coming from dark. */

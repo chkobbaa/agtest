@@ -10,58 +10,56 @@ import type { Bilingual } from "./types";
 export const COPY: Record<string, Bilingual> = {
   // ---- Global / chrome ----
   "brand.tag": {
-    en: "Sweetness forged in the harshest sun.",
-    ar: "حلاوة تتسوّى في أقسى شمس.",
+    en: "Streetwear from Nabeul for the long walk.",
+    ar: "ستريت وير للمشية الطويلة.",
   },
+  "nav.home": { en: "Home", ar: "Home" },
   "nav.world": { en: "World", ar: "العالَم" },
   "nav.name": { en: "The Name", ar: "الإسم" },
   "nav.walker": { en: "The Walker", ar: "السّايْر" },
   "nav.drops": { en: "Drops", ar: "الدروبات" },
-  "nav.shop": { en: "Shop", ar: "المتجر" },
+  "nav.shop": { en: "Catalog", ar: "الكاتالوڨ" },
   "nav.journal": { en: "Journal", ar: "اليوميّات" },
   "nav.join": { en: "Join the caravan", ar: "إلحق بالقافلة" },
   "lang.toggle": { en: "عربي", ar: "EN" },
 
   // ---- Preloader ----
   "loader.from": { en: "FROM THE SOUTH", ar: "مِنْ الجنوب" },
-  "loader.to": { en: "TO THE STREET", ar: "للزّنقة" },
+  "loader.to": { en: "TO THE STREET", ar: "للشارع" },
 
   // ---- Hero ----
-  "hero.kicker": { en: "Tunisian streetwear · est. in the oasis", ar: "ستريت وير تونسي · وُلد في الواحة" },
+  "hero.kicker": { en: "Nabeul, Tunisia · carried by the Walker", ar: "ستريت وير تونسي · يحمله السّايْر" },
   "hero.line1": { en: "WEAR", ar: "إلبس" },
   "hero.line2": { en: "THE", ar: "" },
   "hero.line3": { en: "LIGHT", ar: "النّور" },
   "hero.sub": {
-    en: "DIGL is the date of light, cut into cloth. Heavy cotton, heavier stories — carried from Tozeur to Tunis on the back of one walker.",
-    ar: "دِيڨل هي تمرة النّور، مقصوصة في قماش. قطن ثقيل، وحكايات أثقل — تتحمل من توزر للعاصمة على ظهر سايْر واحد.",
+    en: "DIGL is streetwear from Nabeul built for movement after heat: heavy cotton, sharp graphics, and road-worn layers carried through the city by the Walker.",
+    ar: "دِيڨل ستريت وير متصنوع للحركة بعد السخانة: قطن ثقيل، ڨرافيك قاطع، وطبقات تعيش الطريق من الجنوب للمدينة مع السّايْر.",
   },
+  "hero.shop": { en: "Shop now", ar: "Shop now" },
   "hero.cta": { en: "Enter the world", ar: "أُدخل العالَم" },
   "hero.scroll": { en: "Scroll to walk", ar: "زيد لتحت باش تمشي" },
 
   // ---- The Name ----
   "name.eyebrow": { en: "01 — The Name", ar: "٠١ — الإسم" },
   "name.headline": {
-    en: "Four letters from the desert.",
-    ar: "أربع حروف جايّين من الصحرا.",
+    en: "Four letters for the ones still moving.",
+    ar: "أربع حروف للّي مازالوا يمشيو.",
   },
-  "name.degla": { en: "Degla", ar: "دڨلة" },
-  "name.noor": { en: "Noor", ar: "نور" },
+  "name.degla": { en: "DIGL", ar: "دِيڨل" },
+  "name.noor": { en: "Light", ar: "نور" },
   "name.p1": {
-    en: "DIGL comes from دڨلة — degla, the date of the Tunisian south. It is the root of Deglet Nour, ‘the date of light’: the sweetest fruit on earth.",
-    ar: "دِيڨل جايّة من دڨلة — تمر الجنوب التونسي. هي أصل «دڨلة نور»: أحلى ثمرة في الدنيا.",
+    en: "DIGL is a streetwear mark: four letters stamped like a tag on walls, sleeves, labels and night routes.",
+    ar: "دِيڨل علامة ستريت وير: أربع حروف تتختم كي التاڨ على الحيطان، الكمايم، الليبلات، وطريق الليل.",
   },
   "name.p2": {
-    en: "It grows where nothing should. Fifty degrees. No rain for months. Pure rock, salt and sun. And out of that violence comes the softest, brightest thing you will ever taste.",
-    ar: "تطلع فين ما يطلع شيء. خمسين درجة. لا مطر لشهور. حجر وملح وشمس. ومن القساوة هاذي تخرج أحلى وأنصع حاجة تذوقها في عمرك.",
+    en: "The name carries the pressure of Nabeul streets: concrete heat, bus windows, seaside wind, workshop dust, and the quiet focus of someone walking home late.",
+    ar: "الإسم يحمل ضغط الشارع التونسي: سخانة الإسمنت، شبابيك الكار، زوايا المدينة، ريح البحر، وتركيز واحد يروّح وحده بالليل.",
   },
   "name.p3": {
-    en: "That contradiction is the whole brand. We do not soften the desert. We wear it.",
-    ar: "التناقض هاذا هو البراند الكل. ما نليّنوش الصحرا. نلبسوها.",
+    en: "That is the whole brand: utility with myth, weight with motion, light without softness.",
+    ar: "هاذا هو البراند الكل: منفعة ومعاها أسطورة، وزن ومعاه حركة، نور بلا طراوة.",
   },
-  "name.stat1": { en: "50°C harvest", ar: "غلّة في ٥٠ درجة" },
-  "name.stat2": { en: "200 days no rain", ar: "٢٠٠ يوم بلا مطر" },
-  "name.stat3": { en: "One fruit of light", ar: "ثمرة نور وحدة" },
-
   // ---- The Walker (character) ----
   "walker.eyebrow": { en: "02 — The Character", ar: "٠٢ — الشخصية" },
   "walker.name": { en: "The Walker", ar: "السّايْر" },
@@ -71,24 +69,24 @@ export const COPY: Record<string, Bilingual> = {
     ar: "كل دروب يبدا بيه.",
   },
   "walker.p1": {
-    en: "At maghreb — the hour the sun gives up — he leaves the oasis. Hood up, barefoot on cooling stone, he carries a lantern. Look closer: the flame inside is a single date, glowing.",
-    ar: "في المغرب — الساعة اللي تستسلم فيها الشمس — يخرج من الواحة. كبّوط على راسه، حافي على الحجر اللي يبرد، شادّ فانوس. رَكّز مليح: النار اللي فيه هي دڨلة وحدة، تشعّل.",
+    en: "At maghreb — when the city shifts temperature — he pulls the hood up and carries a lantern through cooling streets. The flame is an ember of focus, a small signal for the way forward.",
+    ar: "في المغرب — وقت المدينة تبدّل حرارتها — يطلع الكبّوط ويهز فانوسه في شوارع تبرد. النار تركيز، إشارة صغيرة للطريق اللي قدّام.",
   },
   "walker.p2": {
-    en: "He walks north. Through Gabès, through Kairouan, into the medina of Tunis. He carries نور — light — from the dark of the desert to the dark of the alleys. And he never arrives.",
-    ar: "يمشي للشمال. يفوت قابس، يفوت القيروان، يدخل لمدينة تونس. يحمل النّور من ضلام الصحرا لضلام الزنانق. وعمره ما يوصل.",
+    en: "He walks Nabeul after dark: stations, back roads, empty lots, workshop doors, and seaside corners. He carries نور — light — from one street shadow to the next. And he never arrives.",
+    ar: "يمشي للشمال. يفوت محطات، طرقات ورا، بلايص فارغة، ويدخل لمدينة تونس. يحمل النّور من ظل شارع لظل شارع. وعمره ما يوصل.",
   },
   "walker.p3": {
-    en: "He is every kid who left the south with nothing but roots in his pocket. DIGL is what he wears on the road.",
+    en: "He is every kid moving through town with roots in his pocket and a route in his head. DIGL is what he wears on the road.",
     ar: "هو كل صغير خرج من الجنوب ما معاهش كان جذوره في جيبه. دِيڨل هي اللي يلبسها في الطريق.",
   },
-  "walker.caption": { en: "السّايْر — keeper of the flame", ar: "السّايْر — حارس النار" },
+  "walker.caption": { en: "السّايْر — keeper of the route", ar: "السّايْر — حارس الطريق" },
 
   // ---- Manifesto ----
   "manifesto.eyebrow": { en: "03 — The Code", ar: "٠٣ — القانون" },
   "manifesto.l1": { en: "We don’t chase the season.", ar: "ما نلهثوش ورا الموسم." },
-  "manifesto.l2": { en: "The season chases the sun.", ar: "الموسم هو اللي يلهث ورا الشمس." },
-  "manifesto.l3": { en: "Made for the derb, not the runway.", ar: "متصنوع للدرب، موش للرَّنواي." },
+  "manifesto.l2": { en: "The route sets the pace.", ar: "الطريق هي اللي تعطي الريتم." },
+  "manifesto.l3": { en: "Made for the darb, not the runway.", ar: "متصنوع للدرب، موش للرانواي." },
   "manifesto.l4": { en: "Heavy cotton. Heavier stories.", ar: "قطن ثقيل. حكايات أثقل." },
   "manifesto.l5": { en: "From dust, light.", ar: "من الغبار، النّور." },
 
@@ -98,11 +96,30 @@ export const COPY: Record<string, Bilingual> = {
   "drops.hint": { en: "Hover a capsule to feel its weather.", ar: "حُطّ الفأرة على كبسولة باش تحسّ بطقسها." },
 
   // ---- Shop ----
-  "shop.eyebrow": { en: "05 — The Goods", ar: "٠٥ — السلعة" },
-  "shop.headline": { en: "Real cloth. Real weight.", ar: "قماش حقيقي. وزن حقيقي." },
+  "shop.eyebrow": { en: "05 — The Catalog", ar: "٠٥ — الكاتالوڨ" },
+  "shop.headline": { en: "Discover the uniform.", ar: "إكتشف الزيّ." },
+  "shop.intro": {
+    en: "A dedicated shop page for DIGL essentials, drops, and السّايْر pieces shipping from Nabeul.",
+    ar: "A dedicated shop page for DIGL essentials, drops, and السّايْر pieces shipping from Nabeul.",
+  },
+  "shop.search": { en: "Search pieces", ar: "لوّج على قطعة" },
+  "shop.sort": { en: "Sort", ar: "رتّب" },
+  "shop.sort.featured": { en: "Featured", ar: "مختار" },
+  "shop.sort.priceAsc": { en: "Price low to high", ar: "السوم من الأقل" },
+  "shop.sort.priceDesc": { en: "Price high to low", ar: "السوم من الأعلى" },
+  "shop.count": { en: "pieces", ar: "قطع" },
   "shop.filter.all": { en: "All", ar: "الكل" },
   "shop.add": { en: "Add to bag", ar: "زيدها للساك" },
   "shop.added": { en: "In the bag ✓", ar: "في الساك ✓" },
+  "shop.details": { en: "Details", ar: "التفاصيل" },
+  "shop.back": { en: "Back to catalog", ar: "إرجع للكاتالوڨ" },
+  "shop.material": { en: "Material", ar: "القماش" },
+  "shop.fit": { en: "Fit", ar: "القَصّة" },
+  "shop.care": { en: "Care", ar: "العناية" },
+  "shop.colorway": { en: "Colorway", ar: "الكولورواي" },
+  "shop.story": { en: "Story", ar: "الحكاية" },
+  "shop.construction": { en: "Construction", ar: "التصنيع" },
+  "shop.shipping": { en: "Ships from Nabeul, Tunisia. Exchange window: 7 days, unworn.", ar: "الشحن من نابل. تبديل في ٧ أيام، القطعة ما تلبستش." },
   "shop.size": { en: "Size", ar: "القياس" },
   "shop.bag": { en: "Bag", ar: "الساك" },
   "shop.bagEmpty": { en: "Your bag is empty. The road is long.", ar: "ساكك فارغ. الطريق طويلة." },
@@ -110,18 +127,29 @@ export const COPY: Record<string, Bilingual> = {
   "shop.total": { en: "Total", ar: "المجموع" },
   "shop.close": { en: "Close", ar: "سكّر" },
   "shop.remove": { en: "Remove", ar: "نحّي" },
+  "shop.zoom": { en: "Click to zoom", ar: "انقر للتكبير" },
 
   // ---- Journey / Map ----
-  "journey.eyebrow": { en: "06 — The Road", ar: "٠٦ — الطريق" },
-  "journey.headline": { en: "South to north, by foot.", ar: "من الجنوب للشمال، على رجليه." },
+  "journey.eyebrow": { en: "06 — Shipping Stages", ar: "٠٦ — مراحل الشحن" },
+  "journey.headline": { en: "From Nabeul to your door.", ar: "من نابل لباب دارك." },
   "journey.body": {
-    en: "Drag the lantern along the road. Every DIGL piece is named for a stop the Walker passed through.",
-    ar: "جُرّ الفانوس على الطريق. كل قطعة دِيڨل تسمّت على محطة فات منها السّايْر.",
+    en: "Drag the lantern through the order path: confirmed, packed, dispatched, delivered. The Walker still carries the route.",
+    ar: "جُرّ الفانوس على الطريق. كل قطعة دِيڨل مقصوصة لمحطة، سخانة، ولا شارع فات منه السّايْر.",
   },
 
   // ---- Journal ----
-  "journal.eyebrow": { en: "07 — The Journal", ar: "٠٧ — اليوميّات" },
-  "journal.headline": { en: "Dispatches from the road.", ar: "أخبار من الطريق." },
+  "journal.eyebrow": { en: "07 — Store Notes", ar: "٠٧ — ملاحظات المتجر" },
+  "journal.headline": { en: "How the order moves.", ar: "كيفاش تتحرك الكوموند." },
+
+  // ---- Team / The Makers ----
+  "nav.team": { en: "Team", ar: "الفريق" },
+  "team.eyebrow": { en: "The Makers", ar: "الصنّاع" },
+  "team.headline": { en: "The hands behind the light.", ar: "الأيادي اللي ورا النّور." },
+  "team.intro": {
+    en: "DIGL is a small crew in Nabeul. Four people keep the route: one lights it, one cuts it, one prints it, one writes it down.",
+    ar: "دِيڨل فريق صغير في نابل. أربعة يحافظوا على الطريق: واحد يشعّلها، واحد يقصّها، واحد يطبعها، وواحد يكتبها.",
+  },
+  "team.back": { en: "Back home", ar: "للرئيسية" },
 
   // ---- Join / Newsletter ----
   "join.eyebrow": { en: "08 — The Caravan", ar: "٠٨ — القافلة" },
@@ -135,9 +163,29 @@ export const COPY: Record<string, Bilingual> = {
   "join.success": { en: "You’re on the road. Watch your inbox at maghreb.", ar: "راك في الطريق. شوف إيمايلك في المغرب." },
   "join.invalid": { en: "That email doesn’t look right.", ar: "الإيمايل هذا ما يبانش صحيح." },
 
+  // ---- Checkout ----
+  "checkout.eyebrow": { en: "Checkout", ar: "Checkout" },
+  "checkout.headline": { en: "Finish the order.", ar: "Finish the order." },
+  "checkout.body": {
+    en: "Choose online payment or WhatsApp payment. Orders are confirmed from Nabeul before dispatch.",
+    ar: "Choose online payment or WhatsApp payment. Orders are confirmed from Nabeul before dispatch.",
+  },
+  "checkout.name": { en: "Full name", ar: "Full name" },
+  "checkout.phone": { en: "Phone / WhatsApp", ar: "Phone / WhatsApp" },
+  "checkout.address": { en: "Delivery address", ar: "Delivery address" },
+  "checkout.online": { en: "Online payment", ar: "Online payment" },
+  "checkout.onlineBody": { en: "Pay by card through a secure payment link.", ar: "Pay by card through a secure payment link." },
+  "checkout.whatsapp": { en: "WhatsApp payment", ar: "WhatsApp payment" },
+  "checkout.whatsappBody": { en: "Send the order on WhatsApp and confirm payment there.", ar: "Send the order on WhatsApp and confirm payment there." },
+  "checkout.summary": { en: "Order summary", ar: "Order summary" },
+  "checkout.continue": { en: "Keep shopping", ar: "Keep shopping" },
+  "checkout.empty": { en: "Your bag is empty. Add a piece first.", ar: "Your bag is empty. Add a piece first." },
+  "checkout.ready": { en: "Payment handoff ready. Replace this with your payment provider link when connected.", ar: "Payment handoff ready." },
+  "checkout.required": { en: "Add your name, phone, and delivery address first.", ar: "Add your name, phone, and delivery address first." },
+
   // ---- Footer ----
-  "footer.tag": { en: "DIGL — دڨلة نور", ar: "دِيڨل — دڨلة نور" },
-  "footer.made": { en: "Cut in Tunis. Born in the oasis.", ar: "مقصوص في تونس. مولود في الواحة." },
+  "footer.tag": { en: "DIGL — السّايْر", ar: "دِيڨل — السّايْر" },
+  "footer.made": { en: "Based in Nabeul, Tunisia. Built for the road.", ar: "مقصوص في تونس. متصنوع للطريق." },
   "footer.rights": { en: "All rights reserved.", ar: "كل الحقوق محفوظة." },
   "footer.ig": { en: "Instagram", ar: "إنستڤرام" },
   "footer.tt": { en: "TikTok", ar: "تيك توك" },
@@ -148,9 +196,9 @@ export const COPY: Record<string, Bilingual> = {
 
 /** Free-standing decorative marquee phrases (looped). */
 export const MARQUEE: Bilingual[] = [
-  { en: "SWEETNESS FORGED IN THE HARSHEST SUN", ar: "حلاوة تتسوّى في أقسى شمس" },
+  { en: "NABEUL STREETWEAR FOR THE LONG WALK", ar: "ستريت وير للمشية الطويلة" },
   { en: "FROM DUST · LIGHT", ar: "من الغبار · النّور" },
-  { en: "TOZEUR → TUNIS", ar: "توزر ← تونس" },
-  { en: "دڨلة نور", ar: "دڨلة نور" },
+  { en: "NABEUL → YOUR DOOR", ar: "نابل ← باب دارك" },
+  { en: "السّايْر", ar: "السّايْر" },
   { en: "WEAR THE LIGHT", ar: "إلبس النّور" },
 ];

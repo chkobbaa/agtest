@@ -83,15 +83,38 @@ function initNightTheme(): void {
 
 function initActiveNav(): void {
   const links = Array.from(document.querySelectorAll<HTMLAnchorElement>(".nav__links a"));
-  const map = new Map<string, HTMLAnchorElement>();
-  links.forEach((l) => map.set(l.getAttribute("href")!.slice(1), l));
-  const sections = document.querySelectorAll<HTMLElement>("main section[id]");
+  // Section links (home page) keyed by their target id.
+  const sectionMap = new Map<string, HTMLAnchorElement>();
+  // Route links (#/shop, #/team) keyed by their route name.
+  const routeMap = new Map<string, HTMLAnchorElement>();
+  links.forEach((l) => {
+    const href = l.getAttribute("href") || "";
+    if (href.startsWith("#/")) routeMap.set(href.slice(2), l);
+    else if (href.startsWith("#")) sectionMap.set(href.slice(1), l);
+  });
+
+  const clearAll = () => links.forEach((l) => l.classList.remove("is-active"));
+
+  // Highlight the route link when on a routed page (shop/team/checkout).
+  const syncRoute = () => {
+    const route = document.body.dataset.route || "home";
+    if (route !== "home") {
+      clearAll();
+      routeMap.get(route)?.classList.add("is-active");
+    }
+  };
+  window.addEventListener("hashchange", () => requestAnimationFrame(syncRoute));
+  syncRoute();
+
+  // On the home page, the active section drives the highlight.
+  const sections = document.querySelectorAll<HTMLElement>('main[data-page="home"] section[id]');
   const io = new IntersectionObserver(
     (entries) => {
+      if ((document.body.dataset.route || "home") !== "home") return;
       entries.forEach((e) => {
         if (e.intersectionRatio > 0.5) {
-          links.forEach((l) => l.classList.remove("is-active"));
-          map.get((e.target as HTMLElement).id)?.classList.add("is-active");
+          clearAll();
+          sectionMap.get((e.target as HTMLElement).id)?.classList.add("is-active");
         }
       });
     },

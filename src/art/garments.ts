@@ -106,6 +106,31 @@ function knit(fill: string, seam: string, ink: string): string {
     ${chestMark(150, 190, ink)}`;
 }
 
+function tank(fill: string, seam: string, ink: string): string {
+  return `
+    <path d="M118 60 L150 78 L182 60 L198 76 L198 256 L102 256 L102 76 Z"
+      fill="${fill}" stroke="${seam}" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M118 60 C 122 50 136 44 150 44 C 164 44 178 50 182 60" fill="none" stroke="${seam}" stroke-width="2.5"/>
+    ${chestMark(150, 160, ink)}`;
+}
+
+function bag(fill: string, seam: string, ink: string): string {
+  return `
+    <rect x="86" y="130" width="128" height="120" rx="6" fill="${fill}" stroke="${seam}" stroke-width="2.5"/>
+    <path d="M114 130 C 114 96 186 96 186 130" fill="none" stroke="${seam}" stroke-width="4" stroke-linecap="round"/>
+    <line x1="86" y1="175" x2="214" y2="175" stroke="${seam}" stroke-width="2" opacity="0.5"/>
+    ${chestMark(150, 195, ink)}`;
+}
+
+function cap(fill: string, seam: string, ink: string): string {
+  return `
+    <path d="M80 170 C 80 120 110 88 150 88 C 190 88 220 120 220 170 Z" fill="${fill}" stroke="${seam}" stroke-width="2.5"/>
+    <path d="M80 170 L220 170 L228 186 L72 186 Z" fill="${fill}" stroke="${seam}" stroke-width="2.5"/>
+    <path d="M80 170 L228 186" fill="none" stroke="${seam}" stroke-width="2"/>
+    <line x1="150" y1="88" x2="150" y2="170" stroke="${seam}" stroke-width="1.5" opacity="0.4"/>
+    ${chestMark(150, 140, ink)}`;
+}
+
 const TABLE: Record<Silhouette, (f: string, s: string, i: string) => string> = {
   tee,
   hoodie,
@@ -114,6 +139,9 @@ const TABLE: Record<Silhouette, (f: string, s: string, i: string) => string> = {
   windbreaker,
   beanie,
   knit,
+  tank,
+  bag,
+  cap,
 };
 
 /** Render a garment flat. `tint` is the drop color; `ink` the print color. */

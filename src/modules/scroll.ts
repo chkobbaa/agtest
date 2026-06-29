@@ -26,13 +26,13 @@ function initWalkerWalk(): void {
   const fig = document.querySelector<HTMLElement>("[data-walker-track]");
   if (!fig) return;
   const rtl = document.documentElement.dir === "rtl";
-  const from = rtl ? -30 : 30;
-  const to = rtl ? 60 : -120;
+  const from = rtl ? "-50vw" : "50vw";
+  const to = rtl ? "50vw" : "-80vw";
   gsap.fromTo(
     fig,
-    { xPercent: from },
+    { x: from },
     {
-      xPercent: to,
+      x: to,
       ease: "none",
       scrollTrigger: {
         trigger: fig.closest("section")!,

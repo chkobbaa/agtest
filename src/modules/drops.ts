@@ -14,8 +14,10 @@ export function initDrops(): void {
       return `
       <article class="drop-card" style="background:${d.color};color:${d.ink}" data-cursor-hover>
         <div class="drop-card__noise"></div>
-        <span class="drop-card__status">${d.status[lang] || d.status.en}</span>
-        <span class="drop-card__index">DROP_0${i + 1}</span>
+        <header style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem;">
+          <span class="drop-card__index">DROP_0${i + 1}</span>
+          <span class="drop-card__status">${d.status[lang] || d.status.en}</span>
+        </header>
         <div>
           <h3 class="drop-card__big">${d.code}</h3>
           <span class="drop-card__ar">${d.arabic}</span>

@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#160f08" />
-    <title>DIGL — Wear the Light · دڨلة نور</title>
+    <title>DIGL — Wear the Light · السّايْر</title>
     <meta
       name="description"
-      content="DIGL is Tunisian streetwear born in the oasis. The date of light, cut into cloth — sweetness forged in the harshest sun. From Tozeur to Tunis."
+      content="DIGL is Tunisian streetwear for the long walk: heavy cotton, sharp graphics, road-worn layers, and the Walker."
     />
     <meta property="og:title" content="DIGL — Wear the Light" />
-    <meta property="og:description" content="Tunisian streetwear born in the oasis. Sweetness forged in the harshest sun." />
+    <meta property="og:description" content="Tunisian streetwear for the long walk. Heavy cotton, sharp graphics, and the Walker." />
     <meta property="og:type" content="website" />
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cellipse cx='16' cy='17' rx='8' ry='12' fill='%23e8a33d'/%3E%3C/svg%3E" />
     <script type="module" src="/src/main.ts"></script>
@@ -49,14 +49,14 @@
         <span class="nav__word display">DIGL</span>
       </a>
       <nav class="nav__links" aria-label="Primary">
-        <a href="#name" data-i18n="nav.name"></a>
-        <a href="#walker" data-i18n="nav.walker"></a>
-        <a href="#drops" data-i18n="nav.drops"></a>
-        <a href="#shop" data-i18n="nav.shop"></a>
-        <a href="#journal" data-i18n="nav.journal"></a>
+        <a href="#name" data-nav-section data-i18n="nav.name"></a>
+        <a href="#walker" data-nav-section data-i18n="nav.walker"></a>
+        <a href="#drops" data-nav-section data-i18n="nav.drops"></a>
+        <a href="#/shop" data-i18n="nav.shop"></a>
+        <a href="#/team" data-i18n="nav.team"></a>
+        <a href="#journal" data-nav-section data-i18n="nav.journal"></a>
       </nav>
       <div class="nav__actions">
-        <button class="nav__lang mono" data-lang-toggle data-i18n="lang.toggle"></button>
         <button class="nav__bag" data-bag-open aria-label="Open bag">
           <span class="nav__bag-label mono" data-i18n="shop.bag"></span>
           <span class="nav__bag-count" data-bag-count>0</span>
@@ -65,7 +65,7 @@
       </div>
     </header>
 
-    <main id="top">
+    <main id="top" class="page page--home" data-page="home">
       <!-- ====================== HERO ====================== -->
       <section id="hero" class="hero" data-section="00">
         <div class="hero__sun" data-art="sun" data-parallax="0.25"></div>
@@ -84,7 +84,10 @@
           <p class="hero__kicker mono" data-i18n="hero.kicker"></p>
           <div class="hero__right">
             <p class="hero__sub" data-i18n="hero.sub"></p>
-            <a class="btn btn--solid" href="#name"><span data-i18n="hero.cta"></span></a>
+            <div class="hero__actions">
+              <a class="btn btn--solid" href="#/shop"><span data-i18n="hero.shop"></span></a>
+              <a class="btn" href="#name"><span data-i18n="hero.cta"></span></a>
+            </div>
           </div>
         </div>
         <a class="hero__scroll mono" href="#name">
@@ -102,7 +105,7 @@
           <p class="eyebrow mono" data-i18n="name.eyebrow"></p>
           <h2 class="name__headline display" data-reveal="lines" data-i18n="name.headline"></h2>
           <div class="name__lockup" aria-hidden="true">
-            <span class="name__ar script-ar">دڨلة نور</span>
+            <span class="name__ar script-ar">دِيڨل</span>
             <span class="name__arrow"></span>
             <span class="name__latin display">DIGL</span>
           </div>
@@ -111,11 +114,6 @@
             <p data-reveal data-i18n="name.p2"></p>
             <p data-reveal class="name__punch" data-i18n="name.p3"></p>
           </div>
-          <ul class="name__stats">
-            <li data-reveal><span class="stat-num" data-count="50" data-suffix="°C"></span><span class="mono" data-i18n="name.stat1"></span></li>
-            <li data-reveal><span class="stat-num" data-count="200"></span><span class="mono" data-i18n="name.stat2"></span></li>
-            <li data-reveal><span class="stat-num" data-count="1"></span><span class="mono" data-i18n="name.stat3"></span></li>
-          </ul>
         </div>
       </section>
 
@@ -161,16 +159,6 @@
         <div class="drops__rail" data-drops></div>
       </section>
 
-      <!-- ====================== SHOP ====================== -->
-      <section id="shop" class="shop" data-section="05">
-        <div class="container shop__head">
-          <p class="eyebrow mono" data-i18n="shop.eyebrow"></p>
-          <h2 class="shop__headline display" data-reveal="lines" data-i18n="shop.headline"></h2>
-          <div class="shop__filters" data-shop-filters></div>
-        </div>
-        <div class="container shop__grid" data-shop-grid></div>
-      </section>
-
       <!-- ====================== JOURNEY ====================== -->
       <section id="journey" class="journey is-night" data-section="06" data-theme="night">
         <div class="container journey__head">
@@ -204,6 +192,109 @@
         </div>
       </section>
     </main>
+
+    <!-- ====================== SHOP PAGE ====================== -->
+    <main class="page page--shop shop-page" data-page="shop" hidden>
+      <section id="catalog" class="shop">
+        <div class="container shop__head">
+          <p class="eyebrow mono" data-i18n="shop.eyebrow"></p>
+          <h1 class="shop__headline display" data-i18n="shop.headline"></h1>
+          <p class="shop__intro" data-i18n="shop.intro"></p>
+          <div class="shop__toolbar">
+            <div class="shop__tools">
+              <label class="shop__search">
+                <span class="sr-only" data-i18n="shop.search"></span>
+                <input data-shop-search type="search" autocomplete="off" />
+              </label>
+              <label class="shop__sort">
+                <span class="sr-only" data-i18n="shop.sort"></span>
+                <select data-shop-sort>
+                  <option value="featured" data-i18n="shop.sort.featured"></option>
+                  <option value="price-asc" data-i18n="shop.sort.priceAsc"></option>
+                  <option value="price-desc" data-i18n="shop.sort.priceDesc"></option>
+                </select>
+              </label>
+            </div>
+            <div class="shop__view-toggle" aria-label="View mode">
+              <button class="view-btn is-active" data-view-toggle="premium" aria-label="Editorial view" title="Editorial view">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><rect x="1" y="1" width="16" height="7" rx="1" fill="currentColor" opacity=".4"/><rect x="1" y="10" width="16" height="7" rx="1" fill="currentColor"/></svg>
+              </button>
+              <button class="view-btn" data-view-toggle="grid" aria-label="Grid view" title="Grid view">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><rect x="1" y="1" width="7" height="7" rx="1" fill="currentColor"/><rect x="10" y="1" width="7" height="7" rx="1" fill="currentColor"/><rect x="1" y="10" width="7" height="7" rx="1" fill="currentColor"/><rect x="10" y="10" width="7" height="7" rx="1" fill="currentColor"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="shop__filters" data-shop-filters></div>
+          <p class="shop__count mono" data-shop-count></p>
+        </div>
+        <div data-shop-grid></div>
+      </section>
+    </main>
+
+    <!-- ====================== CHECKOUT PAGE ====================== -->
+    <main class="page page--checkout checkout-page" data-page="checkout" hidden>
+      <section class="checkout">
+        <div class="container checkout__grid">
+          <div class="checkout__main">
+            <p class="eyebrow mono" data-i18n="checkout.eyebrow"></p>
+            <h1 class="checkout__headline display" data-i18n="checkout.headline"></h1>
+            <p class="checkout__body" data-i18n="checkout.body"></p>
+            <form class="checkout__form" data-checkout-form>
+              <label>
+                <span data-i18n="checkout.name"></span>
+                <input type="text" name="name" autocomplete="name" required />
+              </label>
+              <label>
+                <span data-i18n="checkout.phone"></span>
+                <input type="tel" name="phone" autocomplete="tel" required />
+              </label>
+              <label>
+                <span data-i18n="checkout.address"></span>
+                <textarea name="address" rows="4" required></textarea>
+              </label>
+            </form>
+            <div class="checkout__options">
+              <button class="checkout-option" data-online-pay type="button">
+                <span class="checkout-option__title" data-i18n="checkout.online"></span>
+                <span class="checkout-option__body" data-i18n="checkout.onlineBody"></span>
+              </button>
+              <button class="checkout-option" data-whatsapp-pay type="button">
+                <span class="checkout-option__title" data-i18n="checkout.whatsapp"></span>
+                <span class="checkout-option__body" data-i18n="checkout.whatsappBody"></span>
+              </button>
+            </div>
+            <p class="checkout__msg mono" data-checkout-msg aria-live="polite"></p>
+          </div>
+          <aside class="checkout__summary">
+            <h2 class="display" data-i18n="checkout.summary"></h2>
+            <div class="checkout__items" data-checkout-items></div>
+            <div class="checkout__total">
+              <span class="mono" data-i18n="shop.total"></span>
+              <strong data-checkout-total>0 TND</strong>
+            </div>
+            <a class="btn checkout__continue" href="#/shop"><span data-i18n="checkout.continue"></span></a>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <!-- ====================== TEAM PAGE ====================== -->
+    <main class="page page--team team-page" data-page="team" hidden>
+      <section class="team">
+        <div class="container team__head">
+          <p class="eyebrow mono" data-i18n="team.eyebrow"></p>
+          <h1 class="team__headline display" data-scramble data-i18n="team.headline"></h1>
+          <p class="team__intro" data-i18n="team.intro"></p>
+        </div>
+        <div class="container team__grid" data-team></div>
+        <div class="container team__foot">
+          <a class="btn" href="#top"><span data-i18n="team.back"></span></a>
+        </div>
+      </section>
+    </main>
+
+    <!-- ====================== PRODUCT DETAIL PAGE ====================== -->
+    <main class="page page--product pdp-page" data-page="product" data-product-page hidden aria-live="polite"></main>
 
     <!-- ====================== FOOTER ====================== -->
     <footer class="footer is-night">
@@ -243,7 +334,7 @@
             <span class="mono" data-i18n="shop.total"></span>
             <span data-bag-total>0 TND</span>
           </div>
-          <button class="btn btn--solid bag__checkout"><span data-i18n="shop.checkout"></span></button>
+          <a class="btn btn--solid bag__checkout" href="#/checkout" data-checkout><span data-i18n="shop.checkout"></span></a>
         </footer>
       </aside>
     </div>

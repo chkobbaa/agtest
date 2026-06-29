@@ -1,13 +1,13 @@
 // السّايْر — The Walker.
 // The brand's character, hand-built as a woodcut-style SVG silhouette:
-// a hooded wanderer carrying a lantern whose flame is a single glowing date.
+// a hooded wanderer carrying a lantern whose flame is a focused ember.
 // Flat ink shapes (screenprint aesthetic) + one amber light source.
 // He leans into a walk toward the light he carries (moving left).
 //
 // `idPrefix` lets us mount the figure more than once on a page without
 // clashing gradient / filter IDs.
 
-/** A stylised date-palm frond: a curved midrib with leaflets fanning out. */
+/** A stylised road reed: a curved midrib with blades fanning out. */
 function frond(cx: number, cy: number, rot: number, len: number): string {
   const leaflets: string[] = [];
   const n = 9;
@@ -36,7 +36,7 @@ export function walkerSVG(idPrefix = "wk"): string {
   const g = (s: string) => `${idPrefix}-${s}`;
   return /* html */ `
 <svg class="walker" viewBox="0 0 480 680" role="img" aria-labelledby="${g("title")}" xmlns="http://www.w3.org/2000/svg">
-  <title id="${g("title")}">The Walker — a hooded figure carrying a glowing date-lantern</title>
+  <title id="${g("title")}">The Walker — a hooded figure carrying a glowing lantern</title>
   <defs>
     <radialGradient id="${g("glow")}" cx="50%" cy="45%" r="55%">
       <stop offset="0%" stop-color="#fff3cf"/>
@@ -44,7 +44,7 @@ export function walkerSVG(idPrefix = "wk"): string {
       <stop offset="70%" stop-color="#e8a33d"/>
       <stop offset="100%" stop-color="#e8a33d" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="${g("date")}" cx="40%" cy="35%" r="75%">
+    <radialGradient id="${g("ember")}" cx="40%" cy="35%" r="75%">
       <stop offset="0%" stop-color="#ffe6a8"/>
       <stop offset="55%" stop-color="#f0a83f"/>
       <stop offset="100%" stop-color="#7a3d12"/>
@@ -64,7 +64,7 @@ export function walkerSVG(idPrefix = "wk"): string {
   <ellipse cx="250" cy="640" rx="160" ry="18" fill="#000" opacity="0.16"/>
 
   <g class="wk-body">
-    <!-- back palm frond strapped over the shoulder (he walks left, frond trails right) -->
+    <!-- back road reed strapped over the shoulder (he walks left, reed trails right) -->
     <g class="wk-frond">
       ${frond(300, 252, 64, 150)}
     </g>
@@ -131,8 +131,8 @@ export function walkerSVG(idPrefix = "wk"): string {
     <line x1="0" y1="12" x2="0" y2="78" stroke="#120c07" stroke-width="2.5" opacity="0.6"/>
     <rect x="-30" y="4" width="60" height="10" rx="3" fill="#120c07"/>
     <rect x="-36" y="76" width="72" height="12" rx="3" fill="#120c07"/>
-    <!-- the date, glowing inside -->
-    <ellipse class="wk-flame" cx="0" cy="48" rx="13" ry="20" fill="url(#${g("date")})"/>
+    <!-- the ember, glowing inside -->
+    <ellipse class="wk-flame" cx="0" cy="48" rx="13" ry="20" fill="url(#${g("ember")})"/>
     <ellipse cx="0" cy="48" rx="26" ry="34" fill="#ffd277" opacity="0.5" filter="url(#${g("soft")})"/>
   </g>
 </svg>`;

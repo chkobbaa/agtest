@@ -7,7 +7,8 @@ import { getLang } from "./i18n";
 export function initMarquee(): void {
   const host = document.querySelector<HTMLElement>("[data-marquee]");
   if (!host) return;
-  const speed = parseFloat(host.dataset.speed || "1") * 0.04;
+  // px per frame at ~60fps. Kept gentle but clearly, continuously moving.
+  const speed = parseFloat(host.dataset.speed || "1") * 0.6;
   let track: HTMLElement;
   let offset = 0;
   let half = 0;
@@ -24,8 +25,6 @@ export function initMarquee(): void {
     });
   }
 
-  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
   function loop() {
     raf = requestAnimationFrame(loop);
     if (!half) return;
@@ -37,7 +36,7 @@ export function initMarquee(): void {
   }
 
   build();
-  if (!reduce) raf = requestAnimationFrame(loop);
+  raf = requestAnimationFrame(loop);
   window.addEventListener("digl:langchange", () => build());
   window.addEventListener("beforeunload", () => cancelAnimationFrame(raf));
 }

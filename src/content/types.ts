@@ -34,19 +34,32 @@ export interface Product {
   /** Which drop it belongs to (Drop.code). */
   drop: string;
   name: Bilingual;
+  category: Bilingual;
+  colorway: Bilingual;
   /** Material / construction spec — concrete, no placeholders. */
   spec: Bilingual;
+  fit: Bilingual;
+  material: Bilingual;
+  care: Bilingual;
+  story: Bilingual;
+  details: Bilingual[];
+  status: Bilingual;
   /** Price in Tunisian Dinar. */
   priceTND: number;
   /** Available sizes, or a single descriptor like "One size". */
   sizes: string[];
   /** Edition note, e.g. "/ 99" for limited. Empty if open stock. */
   edition?: string;
+  /** Array of image URLs for the product gallery. If absent, falls back to the SVG garment. */
+  images?: string[];
+  /** Optional lifestyle/editorial hero image URL for the premium row layout. */
+  lifestyleImage?: string;
   /** Garment silhouette used to pick the SVG template. */
-  silhouette: "hoodie" | "tee" | "cargo" | "jacket" | "beanie" | "knit" | "windbreaker";
+  silhouette: "hoodie" | "tee" | "cargo" | "jacket" | "beanie" | "knit" | "windbreaker" | "tank" | "bag" | "cap";
+  bover?: string;
 }
 
-/** A stop on the journey from the southern oasis to the northern medina. */
+/** A stop on the journey from the southern edge to the northern medina. */
 export interface JourneyStop {
   city: Bilingual;
   /** Normalised position on the stylised map (0–100, both axes). */
@@ -63,4 +76,20 @@ export interface JournalEntry {
   title: Bilingual;
   body: Bilingual;
   place: Bilingual;
+}
+
+/** A member of the crew behind DIGL — "The Makers". */
+export interface TeamMember {
+  id: string;
+  name: Bilingual;
+  /** What they hold down, in brand voice. */
+  role: Bilingual;
+  bio: Bilingual;
+  /** A short tag/handle line, e.g. "keeps the route". */
+  tag: Bilingual;
+  /** Portrait variant for the hand-built woodcut bust. */
+  portrait: "keeper" | "cutter" | "ink" | "scribe";
+  /** Signature tint (pulled from the drop palette) for the portrait. */
+  color: string;
+  ink: string;
 }

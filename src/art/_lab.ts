@@ -23,4 +23,4 @@ tile("cargo", garmentSVG("cargo", "#c9a06b", "#241a10"));
 tile("jacket DERB", garmentSVG("jacket", "#3f6fa3", "#f1f4f8"));
 tile("windbreaker", garmentSVG("windbreaker", "#e8a33d", "#1a1206"));
 tile("beanie", garmentSVG("beanie", "#3f6fa3", "#f1f4f8"));
-tile("knit OASIS", garmentSVG("knit", "#2f5d4a", "#eef3ec"));
+tile("knit RAHA", garmentSVG("knit", "#2f5d4a", "#eef3ec"));

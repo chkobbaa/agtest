@@ -25,8 +25,8 @@ export function initCursor(): void {
   function loop() {
     raf = requestAnimationFrame(loop);
     // dot follows fast, glow trails via the same eased position
-    x += (tx - x) * 0.22;
-    y += (ty - y) * 0.22;
+    x += (tx - x) * 0.35;
+    y += (ty - y) * 0.35;
     cursor!.style.transform = `translate3d(${x}px, ${y}px, 0)`;
   }
   raf = requestAnimationFrame(loop);
