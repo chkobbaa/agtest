@@ -1,9 +1,7 @@
 import type { Drop, Product, JourneyStop, JournalEntry, TeamMember } from "./types";
 
-const media = (name: string) => {
-  const base = import.meta.env.BASE_URL.replace(/\/?$/, "/");
-  return new URL(`${base}media/${name}`, window.location.href).href;
-};
+const media = (name: string) =>
+  `https://github.com/chkobbaa/agtest/blob/claude/digl-streetwear-38c2047b9d9f80feb4ec00a9bf96f485/public/media/${name}?raw=true`;
 
 // ---------------------------------------------------------------------------
 // DROPS — four capsules, one road from the south to the city.
