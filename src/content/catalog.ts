@@ -1,7 +1,5 @@
 import type { Drop, Product, JourneyStop, JournalEntry, TeamMember } from "./types";
 
-const media = (name: string) => new URL(`../media/${name}`, import.meta.url).href;
-
 // ---------------------------------------------------------------------------
 // DROPS — four capsules, one road from the south to the city.
 // ---------------------------------------------------------------------------
@@ -67,11 +65,11 @@ export const PRODUCTS: Product[] = [
       { en: "Pre-shrunk body", ar: "متقلّص قبل الخياطة" },
     ],
     images: [
-      media("shirt.webp"),
-      media("shirt2.webp"),
-      media("shirt3.webp")
+      "/media/shirt.webp",
+      "/media/shirt2.webp",
+      "/media/shirt3.webp"
     ],
-    lifestyleImage: media("life_white_shirt.webp"),
+    lifestyleImage: "/media/life_white_shirt.webp",
     status: { en: "Available", ar: "متوفّر" },
     priceTND: 85,
     sizes: ["S", "M", "L", "XL"],
@@ -100,10 +98,10 @@ export const PRODUCTS: Product[] = [
       { en: "Reinforced straps", ar: "سمطة مدعمة" },
     ],
     images: [
-      media("tank_top.webp"),
-      media("tank_top2.webp")
+      "/media/tank_top.webp",
+      "/media/tank_top2.webp"
     ],
-    lifestyleImage: media("life_black_tank.webp"),
+    lifestyleImage: "/media/life_black_tank.webp",
     status: { en: "Available", ar: "متوفّر" },
     priceTND: 55,
     sizes: ["S", "M", "L"],
@@ -132,10 +130,10 @@ export const PRODUCTS: Product[] = [
       { en: "Reinforced handles", ar: "يدين مدعمة" },
     ],
     images: [
-      media("bag.webp"),
-      media("bag2.webp")
+      "/media/bag.webp",
+      "/media/bag2.webp"
     ],
-    lifestyleImage: media("life_bag.webp"),
+    lifestyleImage: "/media/life_bag.webp",
     status: { en: "Available", ar: "متوفّر" },
     priceTND: 45,
     sizes: ["OS"],
@@ -163,9 +161,9 @@ export const PRODUCTS: Product[] = [
       { en: "Metal clasp", ar: "قفل حديد" },
     ],
     images: [
-      media("cap.webp")
+      "/media/cap.webp"
     ],
-    lifestyleImage: media("life_pink_cap.webp"),
+    lifestyleImage: "/media/life_pink_cap.webp",
     status: { en: "Available", ar: "متوفّر" },
     priceTND: 35,
     sizes: ["OS"],
@@ -193,12 +191,12 @@ export const PRODUCTS: Product[] = [
       { en: "Ribbed cuffs", ar: "أطراف مضلعة" },
     ],
     images: [
-      media("hoodie.webp"),
-      media("hoodie2.webp"),
-      media("hoodie3.webp"),
-      media("hoodie4.webp")
+      "/media/hoodie.webp",
+      "/media/hoodie2.webp",
+      "/media/hoodie3.webp",
+      "/media/hoodie4.webp"
     ],
-    lifestyleImage: media("life_pink_hoodie.webp"),
+    lifestyleImage: "/media/life_pink_hoodie.webp",
     status: { en: "Drops soon", ar: "قريبا" },
     priceTND: 180,
     sizes: ["S", "M", "L", "XL"],
@@ -226,11 +224,11 @@ export const PRODUCTS: Product[] = [
       { en: "Matte black drawcords", ar: "كردون أكحل" },
     ],
     images: [
-      media("black_hoodie.webp"),
-      media("black_hoodie2.webp"),
-      media("black_hoodie3.webp")
+      "/media/black_hoodie.webp",
+      "/media/black_hoodie2.webp",
+      "/media/black_hoodie3.webp"
     ],
-    lifestyleImage: media("life_black_hoodie.webp"),
+    lifestyleImage: "/media/life_black_hoodie.webp",
     status: { en: "Drops soon", ar: "قريبا" },
     priceTND: 180,
     sizes: ["S", "M", "L", "XL", "XXL"],
