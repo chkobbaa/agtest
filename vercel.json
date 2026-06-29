@@ -1,0 +1,19 @@
+{
+  "rewrites": [
+    {
+      "source": "/src/media/(.*)",
+      "destination": "https://raw.githubusercontent.com/chkobbaa/agtest/claude/digl-streetwear-38c2047b9d9f80feb4ec00a9bf96f485/public/media/$1"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store, no-cache, must-revalidate, max-age=0"
+        }
+      ]
+    }
+  ]
+}

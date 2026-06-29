@@ -1,0 +1,67 @@
+# DIGL — السّايْر
+
+**Wear the light.** A from-scratch brand site for DIGL, a Tunisian streetwear
+label. The whole identity — a character, a road myth, and an immersive,
+scroll‑driven world — is built in code. No stock photography: every visual
+(the mascot, the logo seal, the garments, the night sky, the heat haze) is
+hand‑drawn SVG or generated on a `<canvas>`.
+
+## The idea
+
+DIGL is a Tunisian streetwear mark built around movement: heavy cotton, sharp
+graphics, road-worn layers, and the pressure of late streets. The world keeps
+the heat, dust, light, and southern-to-city route, but the brand is about
+garments and the people who keep walking.
+
+Every drop begins with **السّايْر — The Walker**, a hooded wanderer who carries a
+lantern whose ember cuts through the dark, walking *noor* (light) from the
+southern edge to the medina of Tunis.
+
+## Highlights
+
+- **Bilingual EN ⇄ عربي** with a full right‑to‑left flip.
+- **The lantern cursor** — you carry a pool of light that blooms inside the
+  night sections (the core brand idea made interactive).
+- **Scroll‑driven storytelling** with GSAP + Lenis: the Walker physically walks
+  across the page, the sun parallaxes, headlines clear from a heat‑blur.
+- **A working catalog** — search, sorting, drop filters, per‑card size
+  selection, hash-linked product detail pages, add‑to‑bag, and a slide‑in bag
+  drawer that persists in `localStorage`.
+- **An interactive map** — drag the lantern along the road from Tozeur to Tunis.
+- A film‑grain overlay and a street heat‑haze, both generated on canvas.
+
+## Stack
+
+- [Vite](https://vitejs.dev/) + vanilla TypeScript (no framework — craft + speed)
+- [GSAP](https://gsap.com/) + ScrollTrigger and [Lenis](https://github.com/darkroomengineering/lenis) for motion
+- Self‑hosted fonts via `@fontsource` (Anton, Space Grotesk, Reem Kufi, Tajawal,
+  Aref Ruqaa) — no external font requests at runtime
+- Hand‑built SVG art + generative `<canvas>` layers
+
+## Run
+
+```bash
+npm install
+npm run dev        # local dev server
+npm run build      # typecheck + production build to dist/
+npm run preview    # serve the production build
+```
+
+## Project structure
+
+```
+index.html              # semantic structure, bilingual data-i18n hooks
+src/
+  main.ts               # boot sequence
+  content/              # the brand bible: bilingual copy + the catalog (data)
+  art/                  # hand-built SVG: the Walker, the seal, garments…
+  modules/              # i18n, smooth scroll, lantern cursor, grain, shop, map…
+  styles/               # design tokens + base + components + sections + motion
+scripts/
+  preview-art.mjs       # dev: render the SVG art to a PNG for visual iteration
+  qa.mjs                # dev: screenshot every section (desktop/mobile, EN/AR)
+```
+
+Accessibility: honours `prefers-reduced-motion` (disables Lenis, parallax, the
+walk and the boiling grain), keeps a visible focus ring, and falls back to the
+native cursor on touch devices.
